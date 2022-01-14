@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>{{title}}</h2>
+
+    <div class="message success" *ngIf="status == 'success'">Proyecto creado correctamente, 
+        <a href="" [routerLink]="['/proyecto/', save_project._id]">puedes verlo aquí</a></div>
+    <div class="message failed" *ngIf="status == 'failed'">El proyecto no se pudo crear</div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required autocomplete="off">
+            <span class="input-error" *ngIf="name.touched && !name.valid">Este campo es obligatorio*</span>
+        </p>
+        <p>
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required autocomplete="off"></textarea>
+            <span class="input-error" *ngIf="description.touched && !description.valid">Este campo es obligatorio*</span>
+        </p>
+        <p>
+            <label for="name">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required autocomplete="off">
+            <span class="input-error" *ngIf="category.touched && !category.valid">Este campo es obligatorio*</span>
+        </p>
+        <p>
+            <label for="year">Año de lanzamiento</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" autocomplete="off">
+        </p>
+        <p>
+            <label for="langs">Lenguajes usados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required autocomplete="off">
+            <span class="input-error" *ngIf="langs.touched && !langs.valid">Este campo es obligatorio*</span>
+        </p>
+        <p>
+            <label for="img">Imagen</label>
+            <input type="file" (change)="fileChanged($event)" placeholder="Escoge tu imagen :>" name="img" #image="ngModel" [(ngModel)]="project.image" autocomplete="off">
+        </p>
+    
+        <input type="submit" value="Crear!" [disabled]="!projectForm.form.valid">
+    </form>
+</div>

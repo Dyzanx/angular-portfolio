@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="project-image">
+        <img *ngIf="project.image" src="{{this.url+'get-image/'+project.image}}" alt="Portada - {{project.name}}" class="image">
+    </div>
+
+    <div class="data">
+        <h1>{{project.name}}</h1>
+        <h3>{{project.description}}</h3>
+        <p class="color-gray">{{project.category}}</p>
+        <p class="color-gray">{{project.langs}}</p>
+        <p class="color-gray">{{project.year}}</p>
+        <p>
+            <a href="" class="button button-edit">Editar</a>
+            <a href="" class="button button-delete">Borrar</a>
+        </p>
+    </div>
+</div>

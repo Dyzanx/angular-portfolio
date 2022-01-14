@@ -1,0 +1,286 @@
+/* !Fuentes */
+@font-face {
+    font-family: 'yanone';
+    src: url('../fonts/yanone.ttf');
+}
+@font-face {
+    font-family: 'finger';
+    src: url('../fonts/finger.ttf');
+}
+@font-face {
+    font-family: 'titilum';
+    src: url('../fonts/titilium.ttf');
+}
+
+/* !Generales */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'yanone', Arial, Helvetica;
+    font-size: 20px;
+    background: url(../img/pattern.png);
+    background-attachment: fixed;
+}
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/* !Header */
+header{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.8);
+    position: fixed;
+    text-transform: uppercase;
+}
+header ul{
+    display: block;
+    width: 40%;
+    height: inherit;
+    margin: 0px auto;
+    margin-top: -3.5px;
+}
+header ul li{
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 88px;
+}
+header a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+header a:hover{
+    background: rgba(8, 8, 0, 0.8);
+}
+/* !Ruta activa */
+.actived{
+    background: rgba(8, 8, 0, 0.8);
+}
+
+/* !Logo */
+#logo{
+    font-family: 'finger';
+    font-size: 30px;
+}
+#logo a{
+    transition: color 500ms , transform 500ms;
+}
+#logo a:hover{
+    color: black;
+    transform: scale(1.50, 1.50);
+    background: transparent;
+}
+
+/* !Contenedor principal */
+#content{
+    width: 80%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 700px;
+    height: auto;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    padding-top: 130px;
+}
+
+/* !Footer */
+footer{
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 25px;
+    color: rgba(0, 0, 0, 0.5);
+}
+footer a{
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* !Sobre mi */
+#title{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+#title h1{
+    font-family: 'finger';
+    font-size: 60px;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 5px;
+}
+#title h2{
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#title p{
+    color: gray;
+}
+
+article.about{
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+article.about h2{
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+article.about p{
+    padding-top: 20px;
+    padding: 30px;
+    text-align: justify;
+}
+
+/* !Formulario(section)*/
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+.container h2{
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* !Formularios */
+form{
+    width: 50%;
+}
+form label{
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+form input[type="text"], input[type="number"], input[type="email"], textarea{
+    width: 100%;
+    padding: 5px;
+}
+form button, input[type="submit"], .button{
+    display: block;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 15px;
+    color: white;
+    background: rgba(53, 103, 164, 1);
+    border: 1px solid rgba(13, 67, 133, 1);
+    cursor: pointer;
+}
+form button:hover, input[type="submit"]:hover{
+    background: rgba(53, 103, 164, 0.8); 
+}
+form input[disabled]{
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.input-error{
+    color: #db3838;
+    padding: 5px;
+    background: #CCCCCC;
+    font-size: 13px;
+}
+
+/* !mensajes */
+.message{
+    padding: 5px;
+    border: 1px solid #EEEEEE;
+    width: 50%;
+    color: white;
+}
+.success{
+    background: green;
+}
+.failed{
+    background: #db3838;
+}
+.success a{
+    color: white;
+}
+
+/* !Lista de proyectos */
+.project{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    list-style-type: none;
+    display: block;
+    float: left;
+    width: 29%;
+    text-align: center;
+    box-shadow: 0px 17px 47px 6px #787878;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+.image-container{
+    width: 100%;
+    max-height: 150px;
+    overflow: hidden;
+}
+.project img{
+    width: 100%;
+}
+.project .langs{
+    color: #bbbaba;
+}
+.project h3{
+    color: black;
+}
+.project a{
+    text-decoration: none;
+}
+
+/* !Detalles de proyecto */
+.container .project-image{
+    float: left;
+    width: 47%;
+}
+.container .project-image img{
+    width: 100%;
+}
+.container .data{
+    margin-left: 30px;
+    float: left;
+    width: 49%;
+}
+.data h1{
+    margin-bottom: 15px;
+}
+.data .color-gray{
+    color: #8a8a8a;
+}
+.button-edit, .button-delete{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    float: left;
+    width: 40%;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: none;
+    font-size: 20px;
+}
+.button-edit{
+    background-color: orange;
+}
+.button-delete{
+    background-color: #f32121;
+}

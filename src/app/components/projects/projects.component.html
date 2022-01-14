@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>{{title}}</h2>
+
+    <ul>
+        <li *ngFor="let project of projects" class="project">
+            <a href="" [routerLink]="['/proyecto/', project._id]" >
+                <div class="image-container">
+                    <img *ngIf="project.image" src="{{this.url+'get-image/'+project.image}}" alt="Portada - {{project.name}}">
+                </div>
+                <h3>{{project.name}}</h3>
+                <p class="langs">{{project.langs}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
