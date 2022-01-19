@@ -174,7 +174,7 @@ form input[type="text"], input[type="number"], input[type="email"], textarea{
     width: 100%;
     padding: 5px;
 }
-form button, input[type="submit"], .button{
+form button, input[type="submit"], .button, .return{
     display: block;
     font-size: 15px;
     padding: 10px;
@@ -183,6 +183,12 @@ form button, input[type="submit"], .button{
     background: rgba(53, 103, 164, 1);
     border: 1px solid rgba(13, 67, 133, 1);
     cursor: pointer;
+}
+.return{
+    font-size: 18px;
+    text-align: center;
+    width: 10%;
+    text-decoration: none;
 }
 form button:hover, input[type="submit"]:hover{
     background: rgba(53, 103, 164, 0.8); 
@@ -283,4 +289,10 @@ form input[disabled]{
 }
 .button-delete{
     background-color: #f32121;
+}
+.alert{
+    color: #f32121;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
 }
