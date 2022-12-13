@@ -35,6 +35,9 @@ export class DetailComponent implements OnInit {
 
   setConfirm(confirm: boolean){
     this.confirm = confirm;
+    window.scroll({
+      top: 0
+    });
   }
 
   getProject(id: any){

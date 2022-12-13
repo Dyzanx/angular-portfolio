@@ -17,18 +17,21 @@ export class CreateComponent implements OnInit {
   public save_project: any;
   public filesToUpload: Array<File> = [];
   public url: string;
+  public year: any;
+  public githubUrl: any;
 
   constructor(
     private _projectService: ProjectService,
     private _uploadService: UploadService
   ){
-    this.title = 'Crear proyecto';
-    this.project = new Project('', '', '', '', 2021, '', '');
+    this.year = new Date().getFullYear();
+    this.title = 'Agregar proyecto';
+    this.project = new Project('', '', '', '', '', this.year, '', '');
     this.url = Global.url;
   }
 
   ngOnInit(): void {
-
+    
   }
 
   onSubmit(form: any){

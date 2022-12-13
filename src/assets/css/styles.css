@@ -1,4 +1,4 @@
-/* !Fuentes */
+/* *Fuentes */
 @font-face {
     font-family: 'yanone';
     src: url('../fonts/yanone.ttf');
@@ -12,7 +12,9 @@
     src: url('../fonts/titilium.ttf');
 }
 
-/* !Generales */
+
+
+/* *Generales */
 *{
     margin: 0;
     padding: 0;
@@ -27,8 +29,43 @@ body{
     float: none;
     clear: both;
 }
+.button{
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 300ms;
+}
+.title{
+    width: 100%;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+.title h1{
+    font-size: 40px;
+}
+.center{
+    margin: 0 auto;
+}
+#detail-return-button{
+    float: right; 
+    margin-right: 50px
+}
+.display-block{
+    display: block;
+}
+.display-none{
+    display: none;
+}
 
-/* !Header */
+
+
+/* * Header */
 header{
     display: block;
     width: 100%;
@@ -36,10 +73,11 @@ header{
     background: rgba(53, 103, 164, 0.8);
     position: fixed;
     text-transform: uppercase;
+    line-height: 88px;
 }
 header ul{
     display: block;
-    width: 40%;
+    max-width: fit-content;
     height: inherit;
     margin: 0px auto;
     margin-top: -3.5px;
@@ -61,40 +99,71 @@ header a{
 }
 header a:hover{
     background: rgba(8, 8, 0, 0.8);
+    border: 1px solid rgba(8, 8, 0, 0.8);
 }
-/* !Ruta activa */
-.actived{
-    background: rgba(8, 8, 0, 0.8);
+.header-list-icon{
+    height: fit-content;
+    width: 60px;
+    float: right;
+    display: none;
+    text-align: center;
+}
+.header-list-icon img{
+    max-height: 30px;
+    max-width: 30px;
+}
+.header-responsive-logo{
+    float: left;
+    display: none;
 }
 
-/* !Logo */
-#logo{
+
+
+/* *Ruta activa */
+.actived{
+    background: rgba(8, 8, 0, 0.8);
+    border: 1px solid rgba(8, 8, 0, 0.8);
+}
+
+
+
+/* *Logo */
+.logo{
     font-family: 'finger';
     font-size: 30px;
 }
-#logo a{
+.logo a:hover{
+    border: none;
+}
+.logo a{
     transition: color 500ms , transform 500ms;
 }
-#logo a:hover{
+.logo a:hover{
     color: black;
     transform: scale(1.50, 1.50);
     background: transparent;
 }
 
-/* !Contenedor principal */
+
+
+/* *Contenedor principal */
 #content{
     width: 80%;
     margin: 0px auto;
     box-shadow: 0px 0px 40px black;
     background: rgba(255, 255, 255, 0.7);
-    min-height: 700px;
+    min-height: fit-content;
     height: auto;
     border-left: 1px solid #b7b7b7;
     border-right: 1px solid #b7b7b7;
     padding-top: 130px;
+    padding-bottom: 130px;
+    min-height: 500px;
 }
 
-/* !Footer */
+
+
+/* *Footer */
 footer{
     width: 100%;
     text-align: center;
@@ -107,7 +176,12 @@ footer a{
     color: rgba(0, 0, 0, 0.5);
 }
 
-/* !Sobre mi */
+
+
+/* *Sobre mi */
+article{
+    padding-bottom: 30px;
+}
 #title{
     width: 70%;
     margin: 0px auto;
@@ -117,7 +191,7 @@ footer a{
 }
 #title h1{
     font-family: 'finger';
-    font-size: 60px;
+    font-size: 50px;
     border-bottom: 1px solid #CCCCCC;
     padding-bottom: 5px;
 }
@@ -130,25 +204,29 @@ footer a{
 #title p{
     color: gray;
 }
-
-article.about{
+article div{
+    margin-top: 30px;
+}
+article .about{
     width: 80%;
     margin: 0px auto;
     margin-bottom: 20px;
     font-size: 23px;
 }
-article.about h2{
+article .about h2{
     border-bottom: 1px solid #CCCCCC;
     padding-bottom: 5px;
     margin-bottom: 5px;
 }
-article.about p{
+article .about p{
     padding-top: 20px;
     padding: 30px;
     text-align: justify;
 }
 
-/* !Formulario(section)*/
+
+
+/* *Formulario(section)*/
 .container{
     padding: 50px;
     padding-top: 10px;
@@ -160,7 +238,9 @@ article.about p{
     display: block;
 }
 
-/* !Formularios */
+
+
+/* *Formularios */
 form{
     width: 50%;
 }
@@ -174,7 +254,7 @@ form input[type="text"], input[type="number"], input[type="email"], textarea{
     width: 100%;
     padding: 5px;
 }
-form button, input[type="submit"], .button, .return{
+form button, input[type="submit"], .return{
     display: block;
     font-size: 15px;
     padding: 10px;
@@ -184,10 +264,13 @@ form button, input[type="submit"], .button, .return{
     border: 1px solid rgba(13, 67, 133, 1);
     cursor: pointer;
 }
+form button:hover, input[type="submit"]:hover, .return:hover{
+    background: rgba(13, 67, 133, 1);
+}
 .return{
     font-size: 18px;
     text-align: center;
-    width: 10%;
+    width: fit-content;
     text-decoration: none;
 }
 form button:hover, input[type="submit"]:hover{
@@ -204,7 +287,9 @@ form input[disabled]{
     font-size: 13px;
 }
 
-/* !mensajes */
+
+
+/* *mensajes */
 .message{
     padding: 5px;
     border: 1px solid #EEEEEE;
@@ -221,7 +306,9 @@ form input[disabled]{
     color: white;
 }
 
-/* !Lista de proyectos */
+
+
+/* *Lista de proyectos */
 .project{
     margin-left: 20px;
     margin-right: 20px;
@@ -230,6 +317,7 @@ form input[disabled]{
     display: block;
     float: left;
     width: 29%;
+    max-height: 230px;
     text-align: center;
     box-shadow: 0px 17px 47px 6px #787878;
     border-radius: 5px;
@@ -254,45 +342,107 @@ form input[disabled]{
     text-decoration: none;
 }
 
-/* !Detalles de proyecto */
+
+
+/* *Detalles de proyecto */
 .container .project-image{
     float: left;
     width: 47%;
+    max-height: fit-content;
+    box-shadow: -28px 20px 34px -15px rgba(122,122,122,1);
 }
 .container .project-image img{
     width: 100%;
 }
 .container .data{
-    margin-left: 30px;
+    border-left: 1px solid #ccc;
+    margin-left: 15px;
+    padding-left: 20px;
     float: left;
     width: 49%;
 }
 .data h1{
     margin-bottom: 15px;
 }
+.data h3{
+    margin-bottom: 10px;
+}
+.data .delete-project{
+    margin-top: 20px;
+}
 .data .color-gray{
     color: #8a8a8a;
 }
+.data .links{
+    margin-top: 30px;
+    text-align: right;
+}
 .button-edit, .button-delete{
-    text-align: center;
-    color: black;
-    text-decoration: none;
     float: left;
-    width: 40%;
-    margin-right: 10px;
-    margin-left: 10px;
-    border: none;
-    font-size: 20px;
+    width: 20%;
+    font-family: Helvetica;
 }
 .button-edit{
-    background-color: orange;
+    background-color: #a1a1aa;
+    color: black;
+}
+.button-edit:hover{
+    background-color: #87878d;
 }
 .button-delete{
-    background-color: #f32121;
+    color: white;
+    background-color: #dc2626;
+}
+.button-delete:hover{
+    background-color: #b91c1c;
 }
 .alert{
     color: #f32121;
     font-size: 25px;
     text-align: center;
     font-weight: bold;
+}
+.github-link a{
+    color: rgba(53, 103, 164, 0.8);
+}
+
+/* * MODAL */
+.modal{
+    margin-bottom: 50px;
+}
+.modal-dialog{
+    margin: 0px auto;
+    min-width: 50%;    
+    max-width: 50%;
+}
+.modal-content{
+    background-color: white;
+    box-shadow: 0px 19px 30px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+    border-radius: 10px;
+}
+.modal .modal-footer{
+    margin-top: 20px;
+}
+.modal-header h5{
+    font-size: 30px;
+}
+.modal .confirm-modal{
+    color: white;
+    background-color: #dc2626;
+}
+.modal .confirm-modal:hover{
+    background-color: #b91c1c;
+}
+.modal .close-modal{
+    background-color: #a3a3a3;
+    color: black;
+}
+
+
+
+/* * ICONS */
+.fa-icon{
+    width: 15px;
+    height: 15px;
 }

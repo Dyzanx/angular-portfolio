@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
   public email: String;
 
   constructor(){
-    this.title = 'Edison :^';
+    this.title = 'Edison Andres Orozco Pulgarin';
     this.subtitle = 'Aspirante a fullsatck';
     this.email = 'andresorozco1206@gmail.com';
    }

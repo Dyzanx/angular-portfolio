@@ -31,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/styles.css"
+              "src/assets/css/styles.css",
+              "src/assets/css/responsive.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -106,6 +109,5 @@
         }
       }
     }
-  },
-  "defaultProject": "proyecto-angular"
+  }
 }
