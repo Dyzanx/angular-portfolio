@@ -1,7 +1,7 @@
 <div class="container">
     <h2>{{title}}</h2>
 
-    <ul>
+    <ul class="projects-container">
         <li *ngFor="let project of projects" class="project">
             <a href="" [routerLink]="['/proyecto/', project._id]" >
                 <div class="image-container">
@@ -11,5 +11,6 @@
                 <p class="langs">{{project.langs}}</p>
             </a>
         </li>
+        <div class="clearfix"></div>
     </ul>
 </div>

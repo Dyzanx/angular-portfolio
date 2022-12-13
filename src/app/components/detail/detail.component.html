@@ -1,21 +1,54 @@
-<div class="container" *ngIf="project">
-    <div class="project-image" *ngIf="project">
-        <img src="{{this.url+'get-image/'+project.image}}" class="image">
-    </div>
-    <div class="data">
-        <h1>{{project.name}}</h1>
-        <h3>{{project.description}}</h3>
-        <p class="color-gray">{{project.category}}</p>
-        <p class="color-gray">{{project.langs}}</p>
-        <p class="color-gray">{{project.year}}</p>
-        <p *ngIf="confirm == false">
-            <a [routerLink]="['/editar/', project._id]" class="button button-edit">Editar</a>
-            <a (click)="setConfirm(true)" class="button button-delete">Borrar</a>
-        </p>
-        <p *ngIf="confirm == true">
-            <span class="alert">Estas seguro de realizar la accion?</span>
-            <a (click)="setConfirm(false)" class="button button-edit">Cancelar</a>
-            <a (click)="deleteProject(project._id)" class="button button-delete">Borrar definitivamente</a>
-        </p>
+<div class="container">
+    <h2>Información del proyecto</h2>
+    <a class="return" id="detail-return-button" [routerLink]="['/proyectos']">←  Regresar a la lista de proyectos</a>
+    <div class="clearfix"></div>
+</div>
+
+  <!-- * MODAL -->
+<div *ngIf="confirm == true">
+  <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmación de acción</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="modal-body">
+            <p>Estás seguro de querer eliminar este proyecto de la lista de entradas?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="button close-modal" (click)="setConfirm(false)" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="button confirm-modal" (click)="deleteProject(project._id)">Eliminar</button>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
+
+<div class="container" *ngIf="project else noProject">
+  <div id="detail-image-container" class="project-image" *ngIf="project">
+    <img src="{{ this.url + 'get-image/' + project.image }}" class="image" />
+  </div>
+  <div class="data" id="detail-data-container">
+    <h1>{{ project.name }}</h1>
+    <h3>{{ project.description }}</h3>
+    <p class="color-gray github-link" title="visitar repositorio">
+      Github:
+      <a target="_blank" href="{{ project.githubUrl }}">Ver repositorio</a>
+    </p>
+    <p class="color-gray">clasificacion: {{ project.category }}</p>
+    <p class="color-gray">Tecnologías usadas: {{ project.langs }}</p>
+    <p class="color-gray">Año de creación: {{ project.year }}</p>
+    <p class="links">
+      <a [routerLink]="['/editar/', project._id]" class="button button-edit">Editar</a>
+      <a (click)="setConfirm(true)" class="button button-delete">Borrar</a>
+    </p>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+
+<ng-template #noProject>
+  <h2 class="title">upss!, parece que el proyecto que buscas no fué encontrado</h2>
+  <button type="button" class="button return center title" routerLink="/">Volver al inicio</button>
+</ng-template>

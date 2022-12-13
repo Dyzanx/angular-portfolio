@@ -18,6 +18,7 @@ export class EditComponent implements OnInit {
   public status: any;
   public save_project: any;
   public filesToUpload: Array<File> = [];
+  public edit: boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -27,6 +28,7 @@ export class EditComponent implements OnInit {
   ){
     this.title = 'Editar proyecto';
     this.url = Global.url;
+    this.edit = true;
   }
 
   ngOnInit(): void {
@@ -44,8 +46,7 @@ export class EditComponent implements OnInit {
         this.project = response.project;
       },
       error: (err: any) => {
-        console.log(<any>err);
-        
+        console.log(<any>err); 
       }
     });
   }

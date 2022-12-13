@@ -5,6 +5,10 @@
         <a href="" [routerLink]="['/proyecto/', save_project._id]">puedes verlo aquí</a></div>
     <div class="message failed" *ngIf="status == 'failed'">El proyecto no se pudo crear</div>
 
+    <a class="return" *ngif="title == 'Editar proyecto'" [routerLink]="['/proyecto', project._id]">
+        ←  Regresar
+    </a>
+    
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
         <p>
             <label for="name">Nombre</label>
@@ -20,6 +24,11 @@
             <label for="name">Categoría</label>
             <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required autocomplete="off">
             <span class="input-error" *ngIf="category.touched && !category.valid">Este campo es obligatorio*</span>
+        </p>
+        <p>
+            <label for="githubUrl">URL repositorio github</label>
+            <input type="text" name="githubUrl" #githubUrl="ngModel" [(ngModel)]="project.githubUrl" required autocomplete="off">
+            <span class="input-error" *ngIf="githubUrl.touched && !githubUrl.valid">Este campo es obligatorio*</span>
         </p>
         <p>
             <label for="year">Año de lanzamiento</label>
@@ -38,7 +47,6 @@
             <input type="file" (change)="fileChanged($event)" placeholder="Escoge tu imagen :>" name="img" autocomplete="off">
         </p>
     
-        <input type="submit" value="Enviar!" [disabled]="!projectForm.form.valid">
-        <a class="return" href="#" [routerLink]="['/proyecto', project._id]">Volver</a>
+        <input type="submit" value="Guardar" [disabled]="!projectForm.form.valid">
     </form>
 </div>
