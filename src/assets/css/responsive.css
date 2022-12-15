@@ -43,7 +43,7 @@
     form{
         width: 97%;
     }
-    form input[type="text"], input[type="number"], input[type="email"], input[type="file"], textarea{
+    form input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="file"], textarea{
         font-size: 17px;
         padding: 8px;
     }
@@ -116,7 +116,7 @@
         min-width: 80%;    
         max-width: 80%;
     }
-    form input[type="text"], input[type="number"], input[type="email"], input[type="file"], textarea{
+    form input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="file"], textarea{
         font-size: 14px;
         padding: 5px;
     }

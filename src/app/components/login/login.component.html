@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>{{ title }}</h2>
+
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <p>
+            <label for="id">Codigo de usuario administrador: </label>
+            <input type="text" name="id" [(ngModel)]="id" required autocomplete="off">
+        </p>
+        <p>
+            <label for="password">Contraseña: </label>
+            <input type="password" name="password" [(ngModel)]="password" required>
+        </p>
+
+        <input type="submit" value="Entrar">
+    </form>
+</div>

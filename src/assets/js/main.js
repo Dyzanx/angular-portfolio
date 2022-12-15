@@ -19,26 +19,36 @@ window.addEventListener("load", () => {
     headerLink1.addEventListener('click', () => {
         if(window.innerWidth <= 527){
             headerLinks.style.display = "none";
+        }else{
+            headerLinks.style.display = "block";
         }
     });
     headerLink2.addEventListener('click', () => {
         if(window.innerWidth <= 527){
             headerLinks.style.display = "none";
+        }else{
+            headerLinks.style.display = "block";
         }
     });
     headerLink3.addEventListener('click', () => {
         if(window.innerWidth <= 527){
             headerLinks.style.display = "none";
+        }else{
+            headerLinks.style.display = "block";
         }
     });
     headerLink4.addEventListener('click', () => {
         if(window.innerWidth <= 527){
             headerLinks.style.display = "none";
+        }else{
+            headerLinks.style.display = "block";
         }
     });
     headerLink5.addEventListener('click', () => {
         if(window.innerWidth <= 527){
             headerLinks.style.display = "none";
+        }else{
+            headerLinks.style.display = "block";
         }
     });
 

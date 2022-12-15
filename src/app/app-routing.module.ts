@@ -8,6 +8,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'contacto', component: ContactComponent},
   {path: 'proyecto/:id', component: DetailComponent},
   {path: 'editar/:id', component: EditComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: ErrorComponent}
 ];
 
