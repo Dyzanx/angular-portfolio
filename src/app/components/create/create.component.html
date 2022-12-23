@@ -5,7 +5,7 @@
         <a href="" [routerLink]="['/proyecto/', save_project._id]">puedes verlo aquí</a></div>
     <div class="message failed" *ngIf="status == 'failed'">El proyecto no se pudo crear</div>
 
-    <a class="return" *ngif="title == 'Editar proyecto'" [routerLink]="['/proyecto', project._id]">
+    <a class="return" *ngif="title==='Editar proyecto'" [routerLink]="['/proyecto', project._id]">
         ←  Regresar
     </a>
     
