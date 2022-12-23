@@ -139,7 +139,14 @@
 }
 
 @media only screen and (max-width: 320px){
+    .title{
+        font-size: 25px;
+    }
     .project{
         width: 95%;
+    }
+    .detail-data-container .links a{
+        width: 100px;
+        margin: none;
     }
 }

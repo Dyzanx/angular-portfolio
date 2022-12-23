@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -10,17 +10,19 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent implements OnInit{
   public title = 'proyecto-angular';
-  // public adminLoged: boolean;
+  public userLoged: boolean = false;
 
   constructor(
     private _userService: UserService,
-    private __router: Router
+    // private __router: Router
   ){
-    
   }
 
 
   ngOnInit(): void {
+    if(this._userService.verifyUserCookie()){
+      this.userLoged = true;
+    }
   }
 
 

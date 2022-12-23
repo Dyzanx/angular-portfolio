@@ -22,26 +22,30 @@ export class UserService{
     }
 
     verifyUserCookie() {
-        let cookies = document.cookie;
-        let myArray = cookies.split("user=");
         var value = false;
-        this.userData = myArray[1].split(';');
-        this.userData = JSON.parse(this.userData[0]);
-    
-        if(this.userData ){
-          value = true;
+        let cookies = document.cookie;
+        if(cookies.includes("user")){
+            let myArray = cookies.split("user=");
+            this.userData = myArray[1].split(';');
+            this.userData = JSON.parse(this.userData[0]);
+        
+            if(this.userData){
+            value = true;
+            }
+        
+            // console.log(this.userData);
         }
-    
-        console.log(this.userData);
         return value;
       }
 
-      // deleteUserCookie(){
-      //   console.log("CERRANDO SESION");
-      //   var cookie_name = 'user';
-      //   var cookie_date = new Date ();
-      //   cookie_date.setTime(cookie_date.getTime()-1);
-      //   document.cookie = cookie_name += "=; expires=" + cookie_date.toString();
-      // }
+
+    delete_cookie(cookie_name: any){
+        var cookie_date = new Date ();
+        cookie_date.setTime(cookie_date.getTime()-1);
+        cookie_date.toString();
+        // console.log("borrando borrando borrando--------");
+        // console.log(cookie_date);
+        document.cookie = cookie_name += "=; expires=" + cookie_date;
+    }
 
 }

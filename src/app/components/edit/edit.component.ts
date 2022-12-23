@@ -4,12 +4,13 @@ import { UploadService } from 'src/app/services/upload.service';
 import { Global } from 'src/app/services/global';
 import { Project } from 'src/app/models/project';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-edit',
   templateUrl: '../create/create.component.html',
   styleUrls: ['./edit.component.scss'],
-  providers: [ProjectService, UploadService]
+  providers: [ProjectService, UploadService, UserService]
 })
 export class EditComponent implements OnInit {
   public url: string;
@@ -19,19 +20,28 @@ export class EditComponent implements OnInit {
   public save_project: any;
   public filesToUpload: Array<File> = [];
   public edit: boolean;
+  public userLoged: boolean;
 
   constructor(
     private _projectService: ProjectService,
     private _uploadService: UploadService,
     private _route: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private _userService: UserService
   ){
     this.title = 'Editar proyecto';
     this.url = Global.url;
     this.edit = true;
+    this.userLoged = false;
   }
 
   ngOnInit(): void {
+    if(!this._userService.verifyUserCookie()){
+      this._router.navigateByUrl("/");
+    }else{
+      this.userLoged = true;
+    }
+
     this._route.params.subscribe(
       (params: any) => {
         let id = params.id;

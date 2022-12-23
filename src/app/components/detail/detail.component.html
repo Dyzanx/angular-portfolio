@@ -39,7 +39,7 @@
     <p class="color-gray">clasificacion: {{ project.category }}</p>
     <p class="color-gray">Tecnologías usadas: {{ project.langs }}</p>
     <p class="color-gray">Año de creación: {{ project.year }}</p>
-    <p class="links">
+    <p class="links" *ngIF="userLoged == true">
       <a [routerLink]="['/editar/', project._id]" class="button button-edit">Editar</a>
       <a (click)="setConfirm(true)" class="button button-delete">Borrar</a>
     </p>

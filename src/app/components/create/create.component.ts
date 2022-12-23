@@ -3,12 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/services/project.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { Global } from 'src/app/services/global';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss'],
-  providers: [ProjectService, UploadService]
+  providers: [ProjectService, UploadService, UserService]
 })
 export class CreateComponent implements OnInit {
   public title:string;
@@ -22,7 +24,9 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _projectService: ProjectService,
-    private _uploadService: UploadService
+    private _uploadService: UploadService,
+    private _userService: UserService,
+    private _router: Router
   ){
     this.year = new Date().getFullYear();
     this.title = 'Agregar proyecto';
@@ -31,7 +35,9 @@ export class CreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    if(!this._userService.verifyUserCookie()){
+      this._router.navigateByUrl("/");
+    }
   }
 
   onSubmit(form: any){

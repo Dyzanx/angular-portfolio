@@ -28,8 +28,9 @@ export class AboutComponent implements OnInit {
     }
   }
 
-  // logout(){
-    // this._userService.deleteUserCookie();
-  // }
+  logout(){
+    // console.log("cerrar sesion");
+    this._userService.delete_cookie("user");
+  }
 
 }
